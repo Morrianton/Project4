@@ -1,3 +1,21 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+}
+
+.background-image{
+    height: 1000px;
+    background: url("../media/golf-course-bg-image.jpg") no-repeat center fixed;
+    background-size: cover;
+    filter: blur(3px);
+    z-index: 0;
+}
+
 .main-container {
-    background: url("media/golf-course-bg-image.jpg");
+    z-index: 1;
+    width: 50%;
+    height: auto;
+    margin: auto;
 }
