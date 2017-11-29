@@ -3,8 +3,8 @@ body {
     padding: 0;
     overflow: hidden;
     background: url("../media/golf-course-bg-image.jpg") no-repeat center;
-    background-size: cover;
-    background-position: 0px -150px;
+    background-size: auto;
+    background-position: 0 -150px;
 }
 
 .main-container{
@@ -13,18 +13,53 @@ body {
     align-items: center;
 }
 
+.nav-bar {
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.90);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+
+}
+
 .course-selection-container {
     height: 500px;
-    width: 50%;
-    margin:85px auto;
+    width: 500px;
+    margin: 50px auto;
     background-color: rgba(255, 255, 255, 0.90);
     border-radius: 2px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
+
+
+@media only screen and (max-width: 500px) {
+    body {
+        background-position: -230px -185px;
+    }
+    .course-selection-container {
+        width: 90%;
+        height: 300px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    body {
+        background-size: auto;
+        background-position: -230px -185px;
+    }
+    .course-selection-container {
+        width: 400px;
+        height: 400px;
+        margin: 100px auto;
+    }
+}
+
 
 .course-selection-container span {
     padding: 5px;
+    text-shadow: 0 1px rgba(0, 0, 0, 0.5);
+    color: goldenrod;
+    font-size: 175%;
 }
