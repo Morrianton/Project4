@@ -2,20 +2,29 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden;
-
-}
-
-.background-image{
-    height: 1000px;
-    background: url("../media/golf-course-bg-image.jpg") no-repeat center fixed;
+    background: url("../media/golf-course-bg-image.jpg") no-repeat center;
     background-size: cover;
-    filter: blur(3px);
-    z-index: 0;
+    background-position: 0px -150px;
 }
 
-.main-container {
-    z-index: 1;
+.main-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.course-selection-container {
+    height: 500px;
     width: 50%;
-    height: auto;
-    margin: auto;
+    margin:85px auto;
+    background-color: rgba(255, 255, 255, 0.90);
+    border-radius: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.course-selection-container span {
+    padding: 5px;
 }
