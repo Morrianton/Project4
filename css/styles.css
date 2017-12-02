@@ -11,55 +11,164 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 50px;
 }
 
 .nav-bar {
     height: 70px;
-    background-color: rgba(255, 255, 255, 0.90);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-
 }
 
+.nav-container {
+    width: 95%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    width: 125px;
+    height: 125px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background: url("../media/golf-ball-pattern-2.jpg") no-repeat center top;
+    background-size: cover;
+    border: solid 1px #bbbbbb;
+    /*box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);*/
+    z-index: 2;
+}
+
+.logo {
+    width: 60px;
+    height: auto;
+    padding: 0 0 20px 0;
+}
+
+/*.nav-menu {*/
+    /*width: 60px;*/
+    /*height: 60px;*/
+    /*background: url("../media/golf-ball-pattern.jpg") no-repeat bottom right;*/
+    /*background-size: cover;*/
+    /*border-radius: 50%;*/
+    /*border: solid 1px gray;*/
+    /*color: #404040;*/
+    /*font-size: 25px;*/
+    /*display: flex;*/
+    /*justify-content: center;*/
+    /*align-items: center;*/
+/*}*/
+
 .course-selection-container {
-    height: 500px;
-    width: 500px;
-    margin: 50px auto;
-    background-color: rgba(255, 255, 255, 0.90);
-    border-radius: 2px;
+    height: 450px;
+    width: 450px;
+    margin: auto;
+    background: url("../media/black-marble-texture.jpg") no-repeat center;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    text-align: left;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+    border: ridge 10px #ffdf00;
+    border-left: groove 10px gold;
+    border-right: ridge 10px gold;
+    border-bottom: ridge 10px gold;
+}
+
+.course-selection-container span {
+    padding: 10px;
+    color: gold;
+    font-size: 150%;
+}
+
+.selector-container {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    margin: 5% 0;
 }
 
+.selector {
+    width: 300px;
+    height: 30px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: none;
+    color: #404040;
+}
+
+.selector:focus {
+    outline: none;
+}
+
+#course-select-container {
+    padding: 10% 0 0 0;
+}
+
+.button {
+    margin: 10% 0;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: url("../media/golf-ball-pattern-2.jpg") no-repeat center top;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*border: solid 1px gray;*/
+}
+
+.button span {
+    color: #404040;
+}
 
 @media only screen and (max-width: 500px) {
     body {
         background-position: -230px -185px;
     }
+    .nav-logo {
+        width: 100px;
+        height: 100px;
+        background-color: #ffffff;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        background: url("../media/golf-ball-pattern.jpg") no-repeat bottom right;
+        background-size: cover;
+        border: solid 1px gray;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+        z-index: 2;
+    }
+    .logo {
+        width: 50px;
+        height: auto;
+        padding: 0 0 20px 0;
+    }
+    .main-container{
+        padding: 110px 0 0 0;
+    }
     .course-selection-container {
-        width: 90%;
+        width: 300px;
         height: 300px;
+        background-size: cover;
     }
-}
-
-@media only screen and (max-width: 768px) {
-    body {
-        background-size: auto;
-        background-position: -230px -185px;
+    .course-selection-container span {
+        font-size: 125%;
     }
-    .course-selection-container {
-        width: 400px;
-        height: 400px;
-        margin: 100px auto;
+    .selector-container {
+        margin: 3% auto;
     }
-}
-
-
-.course-selection-container span {
-    padding: 5px;
-    text-shadow: 0 1px rgba(0, 0, 0, 0.5);
-    color: goldenrod;
-    font-size: 175%;
+    .selector {
+        width: 225px;
+        height: 20px;
+    }
+    .button {
+        width: 50px;
+        height: 50px;
+    }
 }
