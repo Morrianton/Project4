@@ -5,6 +5,7 @@ body {
     background: url("../media/golf-course-bg-image.jpg") no-repeat center;
     background-size: auto;
     background-position: 0 -150px;
+    font-family: 'Cormorant Garamond', serif;
 }
 
 .main-container{
@@ -99,6 +100,7 @@ body {
     background-color: rgba(255, 255, 255, 0.9);
     border: none;
     color: #404040;
+    font-size: 100%;
 }
 
 .selector:focus {
@@ -107,6 +109,10 @@ body {
 
 #course-select-container {
     padding: 10% 0 0 0;
+}
+
+#tee-type-select {
+    width: 125px;
 }
 
 .button {
@@ -124,6 +130,7 @@ body {
 
 .button span {
     color: #404040;
+    font-weight: bold;
 }
 
 @media only screen and (max-width: 500px) {
@@ -140,8 +147,7 @@ body {
         align-items: flex-end;
         background: url("../media/golf-ball-pattern.jpg") no-repeat bottom right;
         background-size: cover;
-        border: solid 1px gray;
-        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+        border: solid 1px #bbbbbb;
         z-index: 2;
     }
     .logo {
@@ -165,7 +171,11 @@ body {
     }
     .selector {
         width: 225px;
-        height: 20px;
+        height: 25px;
+        font-size: 80%;
+    }
+    #tee-type-select {
+        width: 75px;
     }
     .button {
         width: 50px;
