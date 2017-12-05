@@ -101,6 +101,7 @@ body {
     border: none;
     color: #404040;
     font-size: 100%;
+    /*text-align: center;*/
 }
 
 .selector:focus {
