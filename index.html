@@ -10,7 +10,7 @@
     <script defer rel="script" src="CDN/jquery/jquery-3.2.1.min.js"></script>
 	<script defer rel="script" type="text/javascript" src="js/main.js"></script>
 </head>
-<body onload="loadMe()">
+<body onload="getcloseCourses()">
     <div class="nav-bar">
         <div class="nav-container">
             <div class="nav-logo">
@@ -29,9 +29,9 @@
             </div>
             <div class="selector-container" id="tee-type-select-container">
                 <span>Select your tee type:</span>
-                <select class="selector" id="tee-type-select" onchange="buildCard(this.value)"></select>
+                <select class="selector" id="tee-type-select"></select>
             </div>
-            <div class="button">
+            <div class="button" onclick="buildCard()">
                 <span>GO</span>
             </div>
 	    </div>
