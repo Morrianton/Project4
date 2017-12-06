@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    /*overflow: hidden;*/
     background: url("../media/golf-course-bg-image.jpg") no-repeat center;
     background-size: auto;
     background-position: 0 -150px;
@@ -9,7 +9,7 @@ body {
 }
 
 .main-container{
-    display: flex;
+    /*display: flex;*/
     justify-content: center;
     align-items: center;
     padding: 50px;
@@ -62,6 +62,10 @@ body {
     /*justify-content: center;*/
     /*align-items: center;*/
 /*}*/
+
+.score-card {
+    background-color: white;
+}
 
 .course-selection-container {
     height: 450px;

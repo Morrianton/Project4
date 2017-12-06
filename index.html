@@ -29,12 +29,46 @@
             </div>
             <div class="selector-container" id="tee-type-select-container">
                 <span>Select your tee type:</span>
-                <select class="selector" id="tee-type-select"></select>
+                <select class="selector" id="tee-type-select" onchange="buildCard(this.value)"></select>
             </div>
             <div class="button">
                 <span>GO</span>
             </div>
+	    </div>
+        <div class="score-card">
+            <div class="add-player-button"></div>
+                <span>
+                    Add Player
+                </span>
+            <div class="holes">
+                <div id="holes-label">
+                    <span>HOLES</span>
+                </div>
+            </div>
+            <div class="yardage">
+                <div id="yardage-label">
+                    <span>YARDS</span>
+                </div>
+            </div>
+            <div class="par">
+                <div id="par-label">
+                    <span>PAR</span>
+                </div>
+            </div>
+            <div class="handicap">
+                <div id="handicap-label">
+                    <span>HANDICAP</span>
+                </div>
+            </div>
+            <div class="player1">
+                <div class="remove-player-button">
+                    <!--fontawesome "no" here-->
+                </div>
+                <div id="p1">
+                    <span>PLAYER 1</span>
+                </div>
+            </div>
         </div>
-	</div>
+    </div>
 </body>
 </html>
