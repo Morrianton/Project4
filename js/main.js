@@ -45,7 +45,13 @@ function selectCourse(courseID) {
 }
 
 function buildCard() {
-    // get this info by index instead of by switch statement. Based on the index, new information will be populated.
+    // needs to clear out the divs that are created with the "for" loops
+
+    // $(".holes").html("");
+    // $(".yardage").html("");
+    // $(".par").html("");
+    // $(".handicap").html("");
+    // $(".player1").html("");
     $("#tee-type-select").val();
     // console.log($("#tee-type-select").val());
     numHoles = currentCourse.course.hole_count;
