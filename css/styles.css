@@ -74,7 +74,7 @@ body {
 
 .add-player-button {
     width: 90px;
-    margin: 5px;
+    margin: 10px;
     background-color: #2e5db9;
     border: solid 2px #19339a;
     border-top: solid 2px #cae5ff;
@@ -90,8 +90,8 @@ body {
 }
 
 .add-player-button span {
-    text-shadow: 0 -1px 0 #19339a;
-    font-size: 18px;
+    text-shadow: 0 -2px 0 #19339a;
+    font-size: 20px;
 }
 
 .back-button span {
@@ -184,6 +184,7 @@ body {
     border-bottom: solid 2px #9a1107;
     margin: 1px 2px 1px -28px;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
 }
 
 .remove-player-button i {
@@ -198,6 +199,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-weight: bold;
+    padding: 0 5px;
+    font-size: 18px;
 }
 
 .input-container {
@@ -214,7 +218,7 @@ body {
     border-right: none;
     border-bottom: solid 2px #000000;
     background-color: #ffe48e;
-    height: 31px;
+    height: 33px;
     text-align: center;
 }
 
@@ -272,6 +276,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-weight: bold;
+    font-size: 16px;
 }
 
 .yards-box {
@@ -292,6 +298,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.last {
+    border-bottom: solid 2px #000000;
 }
 
 .course-selection-container {

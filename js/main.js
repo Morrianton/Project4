@@ -63,7 +63,7 @@ function buildCard() {
             $(".yardage").append("<div class='yards-box' id='yardage" + holeInfo[hole].hole_num + "'><span>" + holeInfo[hole].tee_boxes[teeTypeIndex].yards + "</span></div>");
             $(".par").append("<div class='par-box' id='par" + holeInfo[hole].hole_num + "'><span>" + holeInfo[hole].tee_boxes[teeTypeIndex].par + "</span></div>");
             $(".handicap").append("<div class='hdcp-box' id='handicap" + holeInfo[hole].hole_num + "'><span>" + holeInfo[hole].tee_boxes[teeTypeIndex].hcp + "</span></div>");
-            $(".input-container").append("<input class='input' id='input" + holeInfo[hole].hole_num + "' type='number'/>");
+            $(".input-container").append("<input class='input' id='input" + holeInfo[hole].hole_num + "' type='number' onkeyup='lockScore(this)'/>");
 
         }
 
@@ -74,10 +74,10 @@ function buildCard() {
             $(".yardage").append("<div class='yards-box' id='yardage" + holeInfo[hole].hole_num + "'><span>" + holeInfo[hole].tee_boxes[teeTypeIndex].yards + "</span></div>");
             $(".par").append("<div class = par-box id='par" + holeInfo[hole].hole_num + "'><span>" + holeInfo[hole].tee_boxes[teeTypeIndex].par + "</span></div>");
             $(".handicap").append("<div class='hdcp-box' id='handicap" + holeInfo[hole].hole_num + "'><span>" + holeInfo[hole].tee_boxes[teeTypeIndex].hcp + "</span></div>");
-            $(".input-container").append("<input class='input' id='input" + holeInfo[hole].hole_num + "' type='number'/>");
+            $(".input-container").append("<input class='input' id='input" + holeInfo[hole].hole_num + "' type='number' onkeyup='lockScore(this)'/>");
         }
 
-        $(".holes").append("<div class='out-box'><span>OUT</span></div>");
+        $(".holes").append("<div class='out-box'><span style='font-weight: bold; font-size: 16px'>OUT</span></div>");
         $(".yardage").append("<div class='out-box'><span>" + currentCourse.course.tee_types[teeTypeIndex].front_nine_yards + "</span></div>");
         $(".par").append("<div class='out-box'><span>" + currentCourse.course.tee_types[teeTypeIndex].front_nine_par + "</span></div>");
         $(".handicap").append("<div class='out-box'></div>");
@@ -88,17 +88,17 @@ function buildCard() {
             $(".yardage").append("<div class='yards-box' id='yardage" + holeInfo[hole].hole_num + "'><span>" + Number(holeInfo[hole].tee_boxes[teeTypeIndex].yards) + "</span></div>");
             $(".par").append("<div class='par-box' id='par" + holeInfo[hole].hole_num + "'><span>" + holeInfo[hole].tee_boxes[teeTypeIndex].par + "</span></div>");
             $(".handicap").append("<div class='hdcp-box' id='handicap" + holeInfo[hole].hole_num + "'><span>" + holeInfo[hole].tee_boxes[teeTypeIndex].hcp + "</span></div>");
-            $(".input-container").append("<input class='input' id='input" + holeInfo[hole].hole_num + "' type='number'/>");
+            $(".input-container").append("<input class='input' id='input" + holeInfo[hole].hole_num + "' type='number' onkeyup='lockScore(this)'/>");
         }
 
-        $(".holes").append("<div class='in-box'><span>IN</span></div>");
+        $(".holes").append("<div class='in-box'><span style='font-weight: bold; font-size: 16px'>IN</span></div>");
         $(".yardage").append("<div class='in-box'><span>" + currentCourse.course.tee_types[teeTypeIndex].back_nine_yards + "</span></div>");
         $(".par").append("<div class='in-box'><span>" + currentCourse.course.tee_types[teeTypeIndex].back_nine_par + "</span></div>");
         $(".handicap").append("<div class='in-box'></div>");
         $(".input-container").append("<div class='in-box'></div>");
     }
 
-    $(".holes").append("<div class='total'><span>TOTAL</span></div>");
+    $(".holes").append("<div class='total'><span style='font-weight: bold; font-size: 16px'>TOTAL</span></div>");
     $(".yardage").append("<div class='total'><span>" + currentCourse.course.tee_types[teeTypeIndex].yards + "</span></div>");
     $(".par").append("<div class='total'><span>" + currentCourse.course.tee_types[teeTypeIndex].par + "</span></div>");
     $(".handicap").append("<div class='total'></div>");
@@ -108,33 +108,43 @@ function buildCard() {
 }
 
 function addPlayer() {
-    $(".info").append("<div class='player" + player + " player'><div class='keep'><div class='remove-player-button' onclick='removePlayer(this)'><i class=\"fa fa-minus\" aria-hidden=\"true\"></i></div><div class='category' id='p" + player + "'><span>Player " + player +"</span></div></div><div class='input-container'></div></div>");
+
+    $(".info").append("<div class='player" + player + " player'><div class='keep'><div class='remove-player-button' onclick='removePlayer(this)'><i class=\"fa fa-minus\" aria-hidden=\"true\"></i></div><div class='category last' id='p" + player + "'><span>Player " + player +"</span></div></div><div class='input-container'></div></div>");
 
     if(numHoles < 18) {
 
         for(let hole = 1; hole <= 9; hole++) {
-            $(".player" + player).children(".input-container").append("<input class='input' id='input" + hole + "' type='number'/>");
+            $(".player" + player).children(".input-container").append("<input class='input last' id='input" + hole + "' type='number' onkeyup='lockScore(this)'/>");
         }
 
-        $(".player" + player).children(".input-container").append("<div class='total'></div>")
+        $(".player" + player).children(".input-container").append("<div class='total last'></div>")
     }
 
     else {
 
         for(let hole = 1; hole <= 9; hole++) {
-            $(".player" + player).children(".input-container").append("<input class='input' id='input" + hole + "' type='number'/>");
+            $(".player" + player).children(".input-container").append("<input class='input last' id='input" + hole + "' type='number' onkeyup='lockScore(this)'/>");
         }
 
-        $(".player" + player).children(".input-container").append("<div class='out-box'></div>");
+        $(".player" + player).children(".input-container").append("<div class='out-box last'></div>");
 
         for(let hole = 10; hole <= 18; hole++) {
-            $(".player" + player).children(".input-container").append("<input class='input' id='input" + hole + "' type='number'/>");
+            $(".player" + player).children(".input-container").append("<input class='input last' id='input" + hole + "' type='number' onkeyup='lockScore(this)'/>");
         }
 
-        $(".player" + player).children(".input-container").append("<div class='in-box'></div>");
-        $(".player" + player).children(".input-container").append("<div class='total'></div>");
+        $(".player" + player).children(".input-container").append("<div class='in-box last'></div>");
+        $(".player" + player).children(".input-container").append("<div class='total last'></div>");
     }
     player++;
+}
+
+function lockScore(target) {
+    let value;
+    if($(target).val() !== "") {
+            value = $(target).val();
+           $(target).replaceWith("<span class='hole-box last'>" + value + "</span>");
+
+        }
 }
 
 function removePlayer(target) {
@@ -142,6 +152,6 @@ function removePlayer(target) {
     player--;
 }
 
-function tally() {
-    $(".input").focus();
+function resetCard() {
+    // code
 }
