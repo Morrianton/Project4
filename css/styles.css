@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    /*overflow: hidden;*/
+    overflow: auto;
     background: url("../media/golf-course-bg-image.jpg") no-repeat center;
     background-size: auto;
     background-position: 0 -150px;
@@ -210,7 +210,7 @@ body {
 .input {
     width: 33px;
     border: solid 2px #000000;
-    background-color: #ffd566;
+    background-color: #ffe48e;
     height: 33px;
     text-align: center;
 }
