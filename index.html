@@ -29,43 +29,57 @@
             </div>
             <div class="selector-container" id="tee-type-select-container">
                 <span>Select your tee type:</span>
-                <select class="selector" id="tee-type-select"></select>
+                <select class="selector" id="tee-type-select" onchange="selectTeeType(this.value)"></select>
             </div>
             <div class="button" onclick="buildCard()">
                 <span>GO</span>
             </div>
 	    </div>
         <div class="score-card">
-            <div class="add-player-button"></div>
-                <span>
-                    Add Player
-                </span>
-            <div class="holes">
-                <div id="holes-label">
-                    <span>HOLES</span>
+            <div class="buttons">
+                <div class="back-button" onclick="goBack()">
+                    <span>
+                        Back
+                    </span>
+                </div>
+                <div class="add-player-button" onclick="addPlayer()">
+                    <span>
+                        Add Player
+                    </span>
                 </div>
             </div>
-            <div class="yardage">
-                <div id="yardage-label">
-                    <span>YARDS</span>
+            <div class="info">
+                <div class="holes">
+                    <div class="category" id="holes-label">
+                        <span>HOLES</span>
+                    </div>
                 </div>
-            </div>
-            <div class="par">
-                <div id="par-label">
-                    <span>PAR</span>
+                <div class="yardage">
+                    <div class="category" id="yardage-label">
+                        <span>YARDS</span>
+                    </div>
                 </div>
-            </div>
-            <div class="handicap">
-                <div id="handicap-label">
-                    <span>HANDICAP</span>
+                <div class="par">
+                    <div class="category" id="par-label">
+                        <span>PAR</span>
+                    </div>
                 </div>
-            </div>
-            <div class="player1">
-                <div class="remove-player-button">
-                    <!--fontawesome "no" here-->
+                <div class="handicap">
+                    <div class='category' id="handicap-label">
+                        <span>HANDICAP</span>
+                    </div>
                 </div>
-                <div id="p1">
-                    <span>PLAYER 1</span>
+                    <div class="player1 player">
+                        <div class="keep">
+
+                            <div class="category" id="p1">
+                                <span >PLAYER 1</span>
+                            </div>
+                        </div>
+                        <div class="input-container">
+
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

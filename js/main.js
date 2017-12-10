@@ -1,13 +1,9 @@
 // ECMAScript 6
 
+let player = 2;
 let teeTypeIndex;
-let totalYardage;
-let yards = [];
-let totalPar;
-let par = [];
 let score = [];
 let numHoles;
-let defaultCourse;
 let defaultCourseID;
 let currentCourse;
 let closeCourses;
@@ -44,14 +40,16 @@ function selectCourse(courseID) {
     });
 }
 
-function buildCard() {
-    // needs to clear out the divs that are created with the "for" loops
+function selectTeeType(teeType) {
+    teeTypeIndex = teeType;
+}
 
-    // $(".holes").html("");
-    // $(".yardage").html("");
-    // $(".par").html("");
-    // $(".handicap").html("");
-    // $(".player1").html("");
+function buildCard() {
+    $(".holes").children("#holes-label").siblings().remove();
+    $(".yardage").children("#yardage-label").siblings().remove();
+    $(".par").children("#par-label").siblings().remove();
+    $(".handicap").children("#handicap-label").siblings().remove();
+    $(".input-container").children().remove();
     $("#tee-type-select").val();
     // console.log($("#tee-type-select").val());
     numHoles = currentCourse.course.hole_count;
@@ -62,54 +60,68 @@ function buildCard() {
     if(numHoles < 18) {
         for(let hole in holeInfo) {
             $(".holes").append("<div id='hole" + holeInfo[hole].hole_num + "'><span>" + holeInfo[hole].hole_num + "</span></div>");
-            console.log(info[hole]);
             $(".yardage").append("<div id='yardage" + holeInfo[hole].hole_num + "'><span>" + holeInfo[hole].tee_boxes[teeTypeIndex].yards + "</span></div>");
-            yards.push(Number($("#yardage" + holeInfo[hole].hol_num).val()));
-            $(".par").append("<div id='par" + info[hole].hole_num + "'><span>" + holeInfo[hole].tee_boxes[teeTypeIndex].par + "</span></div>");
-            par.push(Number($("#par" + holeInfo[hole].hol_num).val()));
-            $(".handicap").append("<div id='handicap" + info[hole].hole_num + "'><span>" + holeInfo[hole].tee_boxes[teeTypeIndex].hcp + "</span></div>");
-            $(".player1").append("<div ><input class='input' type='number'/></div>");
+            $(".par").append("<div id='par" + holeInfo[hole].hole_num + "'><span>" + holeInfo[hole].tee_boxes[teeTypeIndex].par + "</span></div>");
+            $(".handicap").append("<div id='handicap" + holeInfo[hole].hole_num + "'><span>" + holeInfo[hole].tee_boxes[teeTypeIndex].hcp + "</span></div>");
+            $(".input-container").append("<input class='input' id='input" + holeInfo[hole].hole_num + "' type='number'/>");
+
         }
 
     }
     else {
         for(let hole = 0; hole <= 8; hole++) {
-            $(".holes").append("<div id='hole" + holeInfo[hole].hole_num + "'><span>" + holeInfo[hole].hole_num + "</span></div>");
-            $(".yardage").append("<div id='yardage" + holeInfo[hole].hole_num + "'><span>" + holeInfo[hole].tee_boxes[teeTypeIndex].yards + "</span></div>");
-            yards.push(Number($("#yardage" + holeInfo[hole].hol_num).val()));
-            $(".par").append("<div id='par" + holeInfo[hole].hole_num + "'><span>" + holeInfo[hole].tee_boxes[teeTypeIndex].par + "</span></div>");
-            par.push(Number($("#par" + holeInfo[hole].hol_num).val()));
-            $(".handicap").append("<div id='handicap" + holeInfo[hole].hole_num + "'><span>" + holeInfo[hole].tee_boxes[teeTypeIndex].hcp + "</span></div>");
-            $(".player1").append("<div id='p" + holeInfo[hole].hole_num + "'><input class='input' type='number'/></div>")
+            $(".holes").append("<div class='hole-box' id='hole" + holeInfo[hole].hole_num + "'><span>" + holeInfo[hole].hole_num + "</span></div>");
+            $(".yardage").append("<div class='yards-box' id='yardage" + holeInfo[hole].hole_num + "'><span>" + holeInfo[hole].tee_boxes[teeTypeIndex].yards + "</span></div>");
+            $(".par").append("<div class = par-box id='par" + holeInfo[hole].hole_num + "'><span>" + holeInfo[hole].tee_boxes[teeTypeIndex].par + "</span></div>");
+            $(".handicap").append("<div class='hdcp-box' id='handicap" + holeInfo[hole].hole_num + "'><span>" + holeInfo[hole].tee_boxes[teeTypeIndex].hcp + "</span></div>");
+            $(".input-container").append("<input class='input' id='input" + holeInfo[hole].hole_num + "' type='number'/>");
         }
 
-        $(".holes").append("<div class='in'><span>IN</span></div>");
-        $(".yardage").append("<div class='in'></div>");
-        $(".par").append("<div class='in'></div>");
-        $(".handicap").append("<div class='in'></div>");
-        $(".player1").append("<div class='in'></div>");
+        $(".holes").append("<div class='out-box'><span>OUT</span></div>");
+        $(".yardage").append("<div class='out-box'><span>" + currentCourse.course.tee_types[teeTypeIndex].front_nine_yards + "</span></div>");
+        $(".par").append("<div class='out-box'><span>" + currentCourse.course.tee_types[teeTypeIndex].front_nine_par + "</span></div>");
+        $(".handicap").append("<div class='out-box'></div>");
+        $(".input-container").append("<div class='out-box'></div>");
 
         for(let hole = 9; hole <= 17; hole++) {
-            $(".holes").append("<div id='hole" + holeInfo[hole].hole_num + "'><span>" + holeInfo[hole].hole_num + "</span></div>");
-            $(".yardage").append("<div id='yardage" + holeInfo[hole].hole_num + "'><span>" + Number(holeInfo[hole].tee_boxes[teeTypeIndex].yards) + "</span></div>");
-            console.log($("#yardage" + holeInfo[hole].hol_num).val());
-            yards.push($("#yardage" + holeInfo[hole].hol_num).val());
-            $(".par").append("<div id='par" + holeInfo[hole].hole_num + "'><span>" + holeInfo[hole].tee_boxes[teeTypeIndex].par + "</span></div>");
-            par.push(Number($("#par" + holeInfo[hole].hol_num).val()));
-            $(".handicap").append("<div id='handicap" + holeInfo[hole].hole_num + "'><span>" + holeInfo[hole].tee_boxes[teeTypeIndex].hcp + "</span></div>");
-            $(".player1").append("<div id='p" + holeInfo[hole].hole_num + "'><input class='input' type='number'/></div>")
+            $(".holes").append("<div class='hole-box' id='hole" + holeInfo[hole].hole_num + "'><span>" + holeInfo[hole].hole_num + "</span></div>");
+            $(".yardage").append("<div class='yards-box' id='yardage" + holeInfo[hole].hole_num + "'><span>" + Number(holeInfo[hole].tee_boxes[teeTypeIndex].yards) + "</span></div>");
+            $(".par").append("<div class='par-box' id='par" + holeInfo[hole].hole_num + "'><span>" + holeInfo[hole].tee_boxes[teeTypeIndex].par + "</span></div>");
+            $(".handicap").append("<div class='hdcp-box' id='handicap" + holeInfo[hole].hole_num + "'><span>" + holeInfo[hole].tee_boxes[teeTypeIndex].hcp + "</span></div>");
+            $(".input-container").append("<input class='input' id='input" + holeInfo[hole].hole_num + "' type='number'/>");
         }
 
-        $(".holes").append("<div class='out'><span>OUT</span></div>");
-        $(".yardage").append("<div class='out'></div>");
-        $(".par").append("<div class='out'></div>");
-        $(".handicap").append("<div class='out'></div>");
-        $(".player1").append("<div class='out'></div>");
+        $(".holes").append("<div class='in-box'><span>IN</span></div>");
+        $(".yardage").append("<div class='in-box'><span>" + currentCourse.course.tee_types[teeTypeIndex].back_nine_yards + "</span></div>");
+        $(".par").append("<div class='in-box'><span>" + currentCourse.course.tee_types[teeTypeIndex].back_nine_par + "</span></div>");
+        $(".handicap").append("<div class='in-box'></div>");
+        $(".input-container").append("<div class='in-box'></div>");
     }
 
     $(".holes").append("<div class='total'><span>TOTAL</span></div>");
-    $(".yardage").append("<div class='total'><span>" + total(yards) + "</span></div>");
-    $(".par").append("<div class='total'><span>" + total(par) + "</span></div>");
+    $(".yardage").append("<div class='total'><span>" + currentCourse.course.tee_types[teeTypeIndex].yards + "</span></div>");
+    $(".par").append("<div class='total'><span>" + currentCourse.course.tee_types[teeTypeIndex].par + "</span></div>");
     $(".handicap").append("<div class='total'></div>");
-    $(".player1").append("<div class='total'></div>");
+    $(".input-container").append("<div class='total'></div>");
+
+    $("#input1").focus();
+}
+
+function addPlayer() {
+    $(".score-card").append("<div class='player" + player + " player'><div class='keep'><div class='remove-player-button' onclick='removePlayer(this)'><i class=\"fa fa-minus\" aria-hidden=\"true\"></i></div><div class='category' id='p" + player + "'><span>Player " + player +"</span></div></div><div class='input-container'></div></div>");
+    if(numHoles < 18) {
+        for(let hole = 0; hole <= 8; hole++) {
+            $(".input-container").append("<input class='input' id='input" + holeInfo[hole].hole_num + "' type='number'/>");
+        }
+    }
+    player++;
+}
+
+function removePlayer(target) {
+    $(target).parent().parent().remove();
+    player--;
+}
+
+function tally() {
+    // $(".input").focus();
 }
