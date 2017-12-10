@@ -108,7 +108,7 @@ function buildCard() {
 }
 
 function addPlayer() {
-    $(".score-card").append("<div class='player" + player + " player'><div class='keep'><div class='remove-player-button' onclick='removePlayer(this)'><i class=\"fa fa-minus\" aria-hidden=\"true\"></i></div><div class='category' id='p" + player + "'><span>Player " + player +"</span></div></div><div class='input-container'></div></div>");
+    $(".info").append("<div class='player" + player + " player'><div class='keep'><div class='remove-player-button' onclick='removePlayer(this)'><i class=\"fa fa-minus\" aria-hidden=\"true\"></i></div><div class='category' id='p" + player + "'><span>Player " + player +"</span></div></div><div class='input-container'></div></div>");
 
     if(numHoles < 18) {
 
@@ -143,5 +143,5 @@ function removePlayer(target) {
 }
 
 function tally() {
-    // $(".input").focus();
+    $(".input").focus();
 }

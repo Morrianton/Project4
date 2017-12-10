@@ -64,15 +64,12 @@ body {
 /*}*/
 
 .score-card {
-    background-color: #ffd566;
     width: 1000px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
-    padding: 20px;
-    border-radius: 1px;
+    margin: auto;
 }
 
 .add-player-button {
@@ -94,7 +91,7 @@ body {
 
 .add-player-button span {
     text-shadow: 0 -1px 0 #19339a;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 .back-button span {
@@ -114,11 +111,14 @@ body {
     align-items: center;
     flex-direction: column;
     border: 1px;
+    padding: 30px;
+    background-color: #ffd566;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+    border-radius: 1px;
 }
 
 .holes {
     display: flex;
-    padding: 0 26px;
 }
 
 #holes-label {
@@ -129,7 +129,6 @@ body {
 
 .yardage {
     display: flex;
-    padding: 0 26px;
 }
 
 #yardage-label {
@@ -140,7 +139,6 @@ body {
 
 .par {
     display: flex;
-    padding: 0 26px;
 }
 
 #par-label {
@@ -151,7 +149,6 @@ body {
 
 .handicap {
     display: flex;
-    padding: 0 26px;
 }
 
 #handicap-label {
@@ -185,7 +182,8 @@ body {
     border-left: solid 2px #9a1107;
     border-right: solid 2px #9a1107;
     border-bottom: solid 2px #9a1107;
-    margin: 1px 2px;
+    margin: 1px 2px 1px -28px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .remove-player-button i {
@@ -193,7 +191,8 @@ body {
 }
 
 .category {
-    border: solid 2px #000000;
+    border-left: solid 2px #000000;
+    border-top: solid 2px #000000;
     width: 90px;
     height: 35px;
     display: flex;
@@ -205,13 +204,17 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
 .input {
     width: 33px;
-    border: solid 2px #000000;
+    border-top: solid 2px #000000;
+    border-left: solid 2px #000000;
+    border-right: none;
+    border-bottom: solid 2px #000000;
     background-color: #ffe48e;
-    height: 33px;
+    height: 31px;
     text-align: center;
 }
 
@@ -221,7 +224,9 @@ body {
 
 
 .total {
-    border: solid 2px #000000;
+    border-top: solid 2px #000000;
+    border-left: solid 2px #000000;
+    border-right: solid 2px #000000;
     width: 60px;
     height: 35px;
     display: flex;
@@ -230,8 +235,9 @@ body {
 }
 
 .in-box {
-    border: solid 2px #000000;
-    width: 35px;
+    border-left: solid 2px #000000;
+    border-top: solid 2px #000000;
+    width: 45px;
     height: 35px;
     display: flex;
     justify-content: center;
@@ -239,8 +245,9 @@ body {
 }
 
 .out-box {
-    border: solid 2px #000000;
-    width: 35px;
+    border-left: solid 2px #000000;
+    border-top: solid 2px #000000;
+    width: 45px;
     height: 35px;
     display: flex;
     justify-content: center;
@@ -248,7 +255,8 @@ body {
 }
 
 .par-box {
-    border: solid 2px #000000;
+    border-left: solid 2px #000000;
+    border-top: solid 2px #000000;
     width: 35px;
     height: 35px;
     display: flex;
@@ -257,7 +265,8 @@ body {
 }
 
 .hole-box {
-    border: solid 2px #000000;
+    border-top: solid 2px #000000;
+    border-left: solid 2px #000000;
     width: 35px;
     height: 35px;
     display: flex;
@@ -266,7 +275,8 @@ body {
 }
 
 .yards-box {
-    border: solid 2px #000000;
+    border-top: solid 2px #000000;
+    border-left: solid 2px #000000;
     width: 35px;
     height: 35px;
     display: flex;
@@ -275,10 +285,8 @@ body {
 }
 
 .hdcp-box {
-    border-right: solid 2px #000000;
     border-left: solid 2px #000000;
-    border-bottom: none;
-    border-top: none;
+    border-top: solid 2px #000000;
     width: 35px;
     height: 35px;
     display: flex;
